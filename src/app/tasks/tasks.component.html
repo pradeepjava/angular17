@@ -1,0 +1,15 @@
+<section id="tasks">
+  <header>
+    <h1>{{ getUserName }}'s Tasks</h1>
+    <menu>
+      <button>Add Task</button>
+    </menu>
+  </header>
+  <ul>
+    @for (task of taskList; track task.id) {
+    <li>
+       <app-task [task]="task" (taskIdToDelete)="deleteTask($event)"></app-task>
+    </li>
+    }
+  </ul>
+</section>
