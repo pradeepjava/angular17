@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { type Task } from './task.model';
 import { OutletContext } from '@angular/router';
+import { AddTaskComponent } from '../add-task/add-task.component';
 
 @Component({
   selector: 'app-task',
@@ -15,14 +16,12 @@ import { OutletContext } from '@angular/router';
   templateUrl: './task.component.html',
   styleUrl: './task.component.css',
 })
-export class TaskComponent implements OnInit {
-  ngOnInit(): void {
-    console.log(this.task);
-  }
+export class TaskComponent {
 
   @Input({ required: true }) task!: Task;
   @Output() taskIdToDelete = new EventEmitter<string>();
   onComplete() {
     this.taskIdToDelete.emit(this.task.id);
   }
+
 }
