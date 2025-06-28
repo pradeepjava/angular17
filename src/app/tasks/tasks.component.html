@@ -11,7 +11,7 @@
   <ul>
     @for (task of taskList; track task.id) {
     <li>
-      <app-task [task]="task" (taskIdToDelete)="deleteTask($event)"></app-task>
+      <app-task [task]="task"></app-task>
     </li>
     }
   </ul>

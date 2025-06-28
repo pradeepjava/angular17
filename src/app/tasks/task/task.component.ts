@@ -1,6 +1,7 @@
 import {
   Component,
   EventEmitter,
+  inject,
   Input,
   OnDestroy,
   OnInit,
@@ -11,6 +12,7 @@ import { OutletContext } from '@angular/router';
 import { AddTaskComponent } from '../add-task/add-task.component';
 import { CardComponent } from "../../shared/card/card.component";
 import { DatePipe } from '@angular/common';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-task',
@@ -19,11 +21,10 @@ import { DatePipe } from '@angular/common';
   styleUrl: './task.component.css',
 })
 export class TaskComponent {
-
+taskService=inject(TaskService);
   @Input({ required: true }) task!: Task;
-  @Output() taskIdToDelete = new EventEmitter<string>();
   onComplete() {
-    this.taskIdToDelete.emit(this.task.id);
+    this.taskService.deleteTask(this.task.id);
   }
 
 }

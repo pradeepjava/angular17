@@ -31,10 +31,6 @@ export class TasksComponent {
   activateAddTaskComponent() {
     this.isAddTaskNeeded = true;
   }
-
-  deleteTask(id: string) {
-    this.taskService.deleteTask(id);
-  }
   onCancelAddTask() {
     this.isAddTaskNeeded = false;
   }
