@@ -1,16 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TaskComponent } from './task/task.component';
 import { DUMMY_USERS } from '../dummy-users';
 import { NewTaskData } from './task/task.model';
-import { AddTaskComponent } from './add-task/add-task.component';
 
 import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-tasks',
-  imports: [TaskComponent, AddTaskComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
+  standalone:false
 })
 export class TasksComponent {
   private taskService;

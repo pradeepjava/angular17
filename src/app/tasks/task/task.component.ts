@@ -16,9 +16,9 @@ import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-task',
-  imports: [CardComponent, DatePipe],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css',
+  standalone:false
 })
 export class TaskComponent {
 taskService=inject(TaskService);

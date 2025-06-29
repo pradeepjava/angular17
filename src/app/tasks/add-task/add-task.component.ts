@@ -11,9 +11,9 @@ import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-add-task',
-  imports: [FormsModule],
   templateUrl: './add-task.component.html',
   styleUrl: './add-task.component.css',
+  standalone:false
 })
 export class AddTaskComponent {
    taskService = inject(TaskService);
